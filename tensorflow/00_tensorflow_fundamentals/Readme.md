@@ -89,6 +89,7 @@ Vectors and matrices are both types of mathematical objects used in linear algeb
 2. **Notation:**
     
 
+![image](https://github.com/SequenceAI/understanding_deeplearning/assets/21698209/f450c040-b639-46e0-9a2a-ed44b0ddd3f1)
 
 
 ![image](https://github.com/SequenceAI/understanding_deeplearning/assets/21698209/6c226458-9462-4da5-851a-6af0514a33c3)
@@ -106,7 +107,8 @@ Vectors and matrices are both types of mathematical objects used in linear algeb
     - A matrix is a two-dimensional array of numbers. It has rows and columns.
 2. **Notation:**
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/29501c38-2349-46d8-b562-fb251ae3027f/5cdd1689-eb79-4562-a446-4224246b3c3b/Untitled.png)
+ 
+![image](https://github.com/SequenceAI/understanding_deeplearning/assets/21698209/6c226458-9462-4da5-851a-6af0514a33c3)
     
 3. **Size:**
     - The size of a matrix is given by the number of rows and columns it has.
@@ -139,7 +141,8 @@ In summary, vectors and matrices are both fundamental structures in linear algeb
     - Higher-dimensional arrays.
     - Examples:
         
-        ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/29501c38-2349-46d8-b562-fb251ae3027f/583497e8-1f3a-4c24-ae0d-de46b1de19ab/Untitled.png)
+  ![image](https://github.com/SequenceAI/understanding_deeplearning/assets/21698209/43332558-feb8-4969-8fb3-d3d0c99fa0e0)
+
         
     
 
