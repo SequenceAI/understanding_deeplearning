@@ -92,7 +92,6 @@ Vectors and matrices are both types of mathematical objects used in linear algeb
 ![image](https://github.com/SequenceAI/understanding_deeplearning/assets/21698209/f450c040-b639-46e0-9a2a-ed44b0ddd3f1)
 
 
-![image](https://github.com/SequenceAI/understanding_deeplearning/assets/21698209/6c226458-9462-4da5-851a-6af0514a33c3)
 
     
 
