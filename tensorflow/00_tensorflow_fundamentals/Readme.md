@@ -88,7 +88,11 @@ Vectors and matrices are both types of mathematical objects used in linear algeb
     - A vector is a one-dimensional array of numbers. It can be represented as a column or row.
 2. **Notation:**
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/29501c38-2349-46d8-b562-fb251ae3027f/f2e2ed01-aae8-4958-80c6-11bb164c06dc/Untitled.png)
+
+
+
+![image](https://github.com/SequenceAI/understanding_deeplearning/assets/21698209/6c226458-9462-4da5-851a-6af0514a33c3)
+
     
 
 1. **Size:**
