@@ -259,3 +259,135 @@ Reshaped matrix:
 ```
 
 Reshaping is a fundamental operation in deep learning and neural networks, where it's often used to prepare data for input to layers or to adapt the shape of tensors during the construction of a neural network model.
+<<<<<<< HEAD
+=======
+
+
+```python
+random_tensor_1 = tf.random.uniform(shape=(3,2))
+random_tensor_2 = tf.random.Generator.from_seed(42)
+random_tensor_2.uniform((3,2))
+random_tensor_2.normal((3,2))
+
+```
+
+The code you provided involves generating random tensors using TensorFlow's random module. Let's break down the differences between `tf.random.uniform` and `tf.random.Generator`:
+
+1. **`tf.random.uniform(shape=(3,2))`**:
+   - This creates a random tensor with a shape of (3, 2) using a default random number generator.
+   - The values in the tensor are drawn from a uniform distribution between 0 (inclusive) and 1 (exclusive).
+
+```python
+random_tensor_1 = tf.random.uniform(shape=(3, 2))
+```
+
+2. **`tf.random.Generator.from_seed(42)`**:
+   - This creates a random number generator with a specific seed (in this case, 42) using the `tf.random.Generator` class.
+   - Setting a seed ensures reproducibility, meaning if you run the same code with the same seed, you'll get the same sequence of random numbers.
+
+```python
+random_tensor_2 = tf.random.Generator.from_seed(42)
+```
+
+3. **`random_tensor_2.uniform((3,2))`**:
+   - This generates a random tensor with a shape of (3, 2) using the random number generator (`random_tensor_2`) created above.
+   - The values are drawn from a uniform distribution between 0 (inclusive) and 1 (exclusive).
+
+```python
+random_uniform_tensor = random_tensor_2.uniform((3, 2))
+```
+
+4. **`random_tensor_2.normal((3,2))`**:
+   - This generates a random tensor with a shape of (3, 2) using the same random number generator (`random_tensor_2`).
+   - The values are drawn from a normal (Gaussian) distribution with mean 0 and standard deviation 1.
+
+```python
+random_normal_tensor = random_tensor_2.normal((3, 2))
+```
+
+In summary, `tf.random.uniform` is a convenience function for generating random tensors directly, while `tf.random.Generator` allows you to create a random number generator with a specific seed and then use it to generate random tensors with various distributions, such as uniform or normal. The latter is often preferred when you need reproducibility in your random experiments.
+
+In the context of random number generation, a "seed" is a starting point or initial value used to initialize a random number generator. The idea is that if you use the same seed, you will get the same sequence of random numbers each time you run your program. This is particularly useful when you want to ensure reproducibility in your experiments or simulations.
+
+Here's how it works:
+
+1. **Seed Initialization**: When you set a seed for a random number generator, it initializes its internal state based on that seed.
+
+2. **Deterministic Sequence**: Once the generator is initialized with a seed, it follows a deterministic algorithm to produce a sequence of seemingly random numbers. The sequence appears random, but it's entirely determined by the initial seed.
+
+3. **Reproducibility**: If you use the same seed in different runs of your program or script, you'll get the exact same sequence of random numbers. This is crucial when you want to reproduce experimental results or share code with others, ensuring that everyone gets the same random data.
+
+In the case of `tf.random.Generator.from_seed(42)`, the seed is set to the integer value 42. You can choose any integer value as a seed, and as long as you use the same seed, you'll get the same sequence of random numbers.
+
+Here's an example:
+
+```python
+import tensorflow as tf
+
+# Create a random number generator with seed 42
+rng = tf.random.Generator.from_seed(42)
+
+# Generate some random numbers
+random_numbers_1 = rng.uniform((3, 3))
+print(random_numbers_1)
+
+# Re-create the random number generator with the same seed
+rng = tf.random.Generator.from_seed(42)
+
+# Generate the same random numbers again
+random_numbers_2 = rng.uniform((3, 3))
+print(random_numbers_2)
+```
+
+In this example, `random_numbers_1` and `random_numbers_2` will be identical because the same seed (42) was used to initialize the random number generator in both cases.
+
+
+# Uniform Distributions vs Normal Distributions
+
+1. **Normal Distribution (Gaussian Distribution):**
+    - **Shape:** Bell-shaped curve.
+    - **Central Tendency:** Symmetrical around the mean.
+    - **Probability Density:** Higher probability of values near the mean, decreasing as you move away.
+    - **Examples:** Physical measurements like height, weight, errors in measurements.
+    - **Probability Density Function (PDF):** Describes the likelihood of different outcomes.
+    
+    !https://u![img.png](img.png)pload.wikimedia.org/wikipedia/commons/thumb/7/74/Normal_Distribution_PDF.svg/700px-Normal_Distribution_PDF.svg.png
+    
+2. **Uniform Distribution:**
+    - **Shape:** Constant probability across the range.
+    - **Central Tendency:** No specific point of concentration.
+    - **Probability Density:** Equal probability for all values in the range.
+    - **Examples:** Rolling a fair die, selecting a random number from a given range.
+    - **Probability Density Function (PDF):** Flat and constant.
+    
+    ![img_1.png](img_1.png)
+
+In a normal distribution, most values cluster around the mean, with fewer values as you move away from the mean. In a uniform distribution, all values have an equal probability of occurring. These distributions are fundamental in statistics and probability theory and are used to model and understand various phenomena in the real world.
+
+In TensorFlow, both `tf.random.Generator.from_seed(seed)` and `tf.random.set_seed(seed)` are used to set the seed for reproducibility in random number generation, but they operate in different ways.
+
+1. **`tf.random.Generator.from_seed(seed)`**:
+   - This method creates a new random number generator instance with the specified seed.
+   - The generator instance can then be used to generate random numbers with various distributions.
+   - If you create multiple generator instances with the same seed, they will produce independent sequences of random numbers.
+
+   Example:
+   ```python
+   rng = tf.random.Generator.from_seed(42)
+   random_numbers = rng.normal(shape=(3, 2))
+   ```
+
+2. **`tf.random.set_seed(seed)`**:
+   - This function sets the global seed for the TensorFlow random number generator.
+   - It affects all random number generators created afterwards in the TensorFlow session.
+   - It's a simpler way to set the seed globally for the entire TensorFlow environment.
+
+   Example:
+   ```python
+   tf.random.set_seed(42)
+   random_numbers = tf.random.normal(shape=(3, 2))
+   ```
+
+In summary, `tf.random.Generator.from_seed(seed)` is useful when you want to create independent random number generators with specific seeds, while `tf.random.set_seed(seed)` sets the seed globally for the entire TensorFlow environment and affects all random operations. You can choose the method that best fits your needs for reproducibility.
+
+![img_2.png](img_2.png)
